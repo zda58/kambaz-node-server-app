@@ -1,0 +1,25 @@
+{
+  "type": "module",
+  "name": "kambaz-node-server-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zda58/kambaz-node-server-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zda58/kambaz-node-server-app/issues"
+  },
+  "homepage": "https://github.com/zda58/kambaz-node-server-app#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "uuid": "^11.1.0"
+  }
+}
