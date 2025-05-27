@@ -15,12 +15,16 @@ export function getAssignmentsForCourse(courseId) {
 export function updateAssignment(assignmentId, assignmentUpdates) {
   const { assignments } = Database;
   const assignment = assignments.find((assignment) => assignment._id === assignmentId);
+  if (!assignment) return assignment;
   Object.assign(assignment, assignmentUpdates);
   return assignment;
 }
 
 export function deleteAssignment(assignmentId) {
   const { assignments } = Database;
-  Database.assignments = assignments.filter((assignment) =>
-    assignments._id != assignmentId);
+  const assignmentIdx = assignments.findIndex((assignment) => assignment._id === assignmentId);
+  if (assignmentIdx != -1) {
+    Database.assignments.splice(assignmentIdx, 1);
+  }
+  return assignmentIdx;
 }
