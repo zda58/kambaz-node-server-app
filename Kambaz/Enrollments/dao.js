@@ -13,3 +13,10 @@ export function deleteEnrollment(enrollmentId) {
     (enrollment) => enrollment._id !== enrollmentId
   );
 }
+
+export function unenrollUserFromCourse(user, course) {
+  const { enrollments } = Database;
+  Database.enrollments = enrollments.filter(
+    (enrollment) => enrollment.user !== user && enrollment.course !== course
+  );
+}
