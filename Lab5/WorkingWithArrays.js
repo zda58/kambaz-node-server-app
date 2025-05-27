@@ -39,6 +39,10 @@ export default function WorkingWithArrays(app) {
   app.get("/lab5/todos/:id/delete", (req, res) => {
     const { id } = req.params;
     const todoIndex = todos.findIndex((t) => t.id === parseInt(id));
+    if (todoIndex === -1) {
+      res.status(404).json({ message: `Unable to update Todo with ID ${id}` });
+      return;
+    }
     todos.splice(todoIndex, 1);
     res.json(todos);
   });
